@@ -260,9 +260,9 @@ register("test:e2e", async (runner) => {
 		throw new Error("Binary must be built to test");
 	}
 
-	const test = await runner.execute(isWin ? "npm.cmd" : "npm", ["run", "test:e2e"]);
+	const test = await runner.execute(isWin ? "npm.cmd" : "npm", ["--scripts-prepend-node-path", "--", "run", "test:e2e"]);
 	if (test.exitCode !== 0) {
-		throw new Error(`Tests failed: ${test.stderr}`);
+		throw new Error(`Tests failed: \n${test.stderr}`);
 	}
 });
 
