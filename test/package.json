@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "../node_modules/.bin/ts-node ../scripts/install-packages.ts",
-    "test": "jest"
+    "test": "npx jest --verbose src"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
